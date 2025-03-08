@@ -1,0 +1,32 @@
+# Extends the previous mod definition with dependency information
+id: example-mod
+name: Example Mod
+version: 1.0.0
+# ... other fields from before ...
+
+# Dependency specification
+dependencies:
+  # Direct dependencies with version constraints
+  requires:
+    - mod: graphics-library
+      version: "^2.0.0"      # Compatible with any 2.x.x version
+    - mod: physics-engine
+      version: "~1.2.0"      # Compatible with any 1.2.x version
+    - mod: ui-framework
+      version: "1.0.0"       # Exact version required
+      
+  # Optional dependencies
+  optional:
+    - mod: high-res-textures
+      version: ">=1.0.0"
+      
+  # Incompatible mods
+  incompatible:
+    - mod: old-graphics-lib
+      version: "*"           # Any version
+      
+  # Dependency resolution configuration
+  resolution:
+    strategy: "highest-compatible" # Options: highest-compatible, strict, user-prompt
+    overrides:                     # Explicit version overrides for transitive dependencies
+      common-utils: "1.5.0"        # Force this version regardless of what other mods request

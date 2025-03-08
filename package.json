@@ -1,0 +1,8 @@
+{
+  "name": "@accretion-disk/mod-service-poc",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -2,15 +2,19 @@
   "name": "@accretion-disk/versions",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "scripts": {
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "test:ui": "vitest --ui"
+  },
   "dependencies": {
+    "arktype": "2.1.9",
     "semver": "7.7.1"
   },
   "devDependencies": {
     "@types/bun": "1.2.4",
     "@types/semver": "7.5.8",
+    "@vitest/ui": "3.0.8",
     "vitest": "3.0.8"
   },
   "peerDependencies": {
